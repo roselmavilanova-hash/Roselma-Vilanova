@@ -20,3 +20,16 @@ Localização: `.claude/skills/dossie-diagnostico-rv/`
 Em uma sessão do Claude Code neste repositório, a skill é acionada automaticamente
 quando a Dra. Roselma menciona "dossiê", "avaliação estrutural", "diagnóstico da
 [nome]" ou cola achados de uma avaliação facial.
+
+## Onde os dossiês são salvos
+
+Os dossiês gerados são salvos na pasta de casos da Dra. Roselma:
+
+```
+/Users/draroselmavilanova/Library/Mobile Documents/com~apple~CloudDocs/RV-EMPRESA/15-DOSSIES-DIAGNOSTICOS/CASOS/
+```
+
+Nome do arquivo: `Dossie_[NomePaciente].md` (e `.pdf`/`.html` quando gerado). Se
+esse caminho do iCloud não estiver disponível (ex.: sessão web/cloud), o dossiê é
+salvo em `/mnt/user-data/outputs/` e a Dra. Roselma é avisada para movê-lo para a
+pasta CASOS.

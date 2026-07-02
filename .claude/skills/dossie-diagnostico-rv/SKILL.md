@@ -62,8 +62,15 @@ As colunas "O QUE AVALIO" das tabelas são fixas; preencha apenas os "ACHADO". T
 3. **Preencher** cada `{{CAMPO}}` com o dado correspondente, reescrevendo no tom da Dra. Roselma (não copie a nota crua — traduza para a voz do método).
 4. **Aplicar blocos condicionais:** se não houver preenchimento prévio, apague as ressalvas "há produto na região"; se não houver etapa concluída, ajuste a lista de próximos passos; monte a tabela de tempos cirúrgicos só com o que foi indicado.
 5. **Revisar a coerência:** a seção "O que NÃO pede" deve conversar com os achados; as medidas do ultrassom devem bater com o texto e com os anexos.
-6. **Entregar** o `.md` final em `/mnt/user-data/outputs/` com nome `Dossie_[NomePaciente].md` e apresentar à Dra. Roselma.
-7. **Se pedirem PDF/HTML**, renderize na identidade navy/dourado (Cormorant + Montserrat), preservando a estrutura e a assinatura fixa, e gere o arquivo para download.
+6. **Entregar** o `.md` final na pasta de casos da Dra. Roselma (ver "Onde salvar" abaixo) com nome `Dossie_[NomePaciente].md` e apresentar à Dra. Roselma.
+7. **Se pedirem PDF/HTML**, renderize na identidade navy/dourado (Cormorant + Montserrat), preservando a estrutura e a assinatura fixa, e salve o arquivo (`Dossie_[NomePaciente].pdf` / `.html`) na mesma pasta de casos.
+
+## Onde salvar (destino dos dossiês)
+- **Destino principal (Mac da Dra. Roselma):**
+  `/Users/draroselmavilanova/Library/Mobile Documents/com~apple~CloudDocs/RV-EMPRESA/15-DOSSIES-DIAGNOSTICOS/CASOS/`
+  Salve cada dossiê como `Dossie_[NomePaciente].md` (e `.pdf`/`.html` quando gerado) diretamente nessa pasta. Ela fica no iCloud Drive, então o arquivo sincroniza automaticamente.
+- **Se a pasta não existir** (ex.: rodando em sessão web/cloud ou em outro computador, onde o caminho do iCloud não está montado): salve em `/mnt/user-data/outputs/` (ou no diretório de trabalho atual) com o mesmo nome de arquivo e avise a Dra. Roselma que o dossiê precisa ser movido para a pasta CASOS. Nunca falhe silenciosamente por causa do caminho.
+- **Nome do arquivo:** use o nome da paciente sem acentos e com `_` no lugar de espaços (ex.: `Dossie_Maria_Silva.md`).
 
 ## Checklist de entrada (o que a Dra. fornece)
 - **Identificação:** nome completo, idade, momento de vida (ex.: climatério sem reposição), atividade física, data da avaliação.
@@ -85,7 +92,7 @@ Monte a tabela do plano apenas com os itens indicados para o caso:
 - Mento com microfat → Volumização e equilíbrio do contorno inferior
 
 ## Saída
-Markdown completo e limpo (pronto para virar Slides/Notion/PDF). Se solicitado, também a versão HTML/PDF na identidade da marca. Sempre com a assinatura e as ressalvas de método preservadas.
+Markdown completo e limpo (pronto para virar Slides/Notion/PDF), salvo na pasta de casos (ver "Onde salvar"). Se solicitado, também a versão HTML/PDF na identidade da marca, salva na mesma pasta. Sempre com a assinatura e as ressalvas de método preservadas.
 
 ## Assets
 - `assets/template-dossie.md` — template mestre com todos os campos `{{...}}` e o texto institucional fixo. **Leia sempre antes de gerar.**
