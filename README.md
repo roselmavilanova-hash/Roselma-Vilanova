@@ -15,6 +15,29 @@ Estrutural da Face — queixa, análise por terços faciais, pescoço, exames
 
 Localização: `.claude/skills/dossie-diagnostico-rv/`
 
+## Agents disponíveis
+
+### `brenda-rv`
+A **Brenda RV** — concierge virtual da prática de Engenharia da Face. Agente
+**única e supervisionada** (por Sabrina) que acolhe o novo contato, responde
+primeiro à pergunta feita, qualifica por temperatura (interna), conduz a jornada
+de entrada (avaliação → reserva → Pix → agendamento) e transfere para Sabrina em
+qualquer exceção, permanecendo em silêncio após a transferência. Nunca
+diagnostica, promete resultado, inventa preço/horário/política nem confirma
+pagamento por print. Só responde com o que está aprovado na Fonte Oficial.
+
+- **`.claude/agents/brenda-rv.md`** — definição do agente (identidade, regras,
+  guardrails, transferência, CRM e segurança transacional).
+- **`brenda-rv/FONTE-OFICIAL.md`** — a **única** fonte de verdade (decisões
+  vigentes × pendentes). A Brenda só informa o que estiver `VIGENTE`.
+- **`brenda-rv/CRM.md`** — ledger operacional mínimo dos contatos.
+- **`brenda-rv/TESTES.md`** — bateria de testes pré-piloto (21 casos) e critérios
+  de aprovação antes de conectar ao WhatsApp.
+
+Estado: núcleo do MVP definido. O **piloto está bloqueado** até fechar as
+decisões comerciais (valores, horários, sinal, provedor Pix, SLA, privacidade)
+listadas em `brenda-rv/FONTE-OFICIAL.md`.
+
 ## Como usar
 
 Em uma sessão do Claude Code neste repositório, a skill é acionada automaticamente
