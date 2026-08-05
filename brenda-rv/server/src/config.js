@@ -43,6 +43,12 @@ export const config = {
   sabrina: {
     whatsapp: (process.env.SABRINA_WHATSAPP || '').replace(/\D/g, ''),
   },
+
+  google: {
+    calendarId: process.env.GOOGLE_CALENDAR_ID || '',
+    serviceAccountKeyFile: process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE || '',
+    serviceAccountKey: process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '',
+  },
 };
 
 /**
@@ -57,5 +63,9 @@ export function readiness() {
     claude: Boolean(config.anthropic.apiKey),
     pix: Boolean(config.pix.key),
     sabrina_alert: Boolean(config.sabrina.whatsapp),
+    agenda_gcal: Boolean(
+      config.google.calendarId &&
+        (config.google.serviceAccountKeyFile || config.google.serviceAccountKey)
+    ),
   };
 }

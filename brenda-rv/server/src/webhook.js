@@ -6,7 +6,7 @@ import { sendText } from './whatsapp.js';
 import { alertarSabrina } from './sabrina.js';
 import * as crm from './crm.js';
 import * as convo from './conversation.js';
-import * as agenda from './agenda.mock.js';
+import * as agenda from './agenda.js';
 import { montarMensagemPix, tratarComprovante } from './pix.js';
 import { POLICY_TEXT, POLICY_VERSION } from './policy.js';
 import { log, maskPhone, snippet } from './logger.js';
@@ -133,7 +133,7 @@ async function tratarMensagem(msg, value) {
   // Ação estruturada (agenda / Pix) — executada de forma determinística.
   let extra = '';
   if (control.acao === 'OFERECER_HORARIOS') {
-    extra = '\n\n' + textoHorarios();
+    extra = '\n\n' + (await textoHorarios());
     crm.update(waId, { estagio: 'Horário oferecido', ultimoMovimento: 'horários oferecidos' });
   } else if (control.acao === 'ENVIAR_PIX') {
     // Apresenta a política (registra versão) e, em seguida, o Pix estático.
@@ -165,8 +165,8 @@ async function tratarMensagem(msg, value) {
   await enviarResposta(waId, resposta);
 }
 
-function textoHorarios() {
-  const { horarios, timezone } = agenda.listarHorariosLivres(2);
+async function textoHorarios() {
+  const { horarios, timezone } = await agenda.listarHorariosLivres(2);
   if (!horarios.length) {
     return 'No momento não tenho blocos autorizados livres para oferecer — vou confirmar a agenda com a equipe e já te retorno. 💛';
   }
