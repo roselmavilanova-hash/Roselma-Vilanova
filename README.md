@@ -34,9 +34,15 @@ pagamento por print. Só responde com o que está aprovado na Fonte Oficial.
 - **`brenda-rv/TESTES.md`** — bateria de testes pré-piloto (21 casos) e critérios
   de aprovação antes de conectar ao WhatsApp.
 
-Estado: núcleo do MVP definido. O **piloto está bloqueado** até fechar as
-decisões comerciais (valores, horários, sinal, provedor Pix, SLA, privacidade)
-listadas em `brenda-rv/FONTE-OFICIAL.md`.
+- **`brenda-rv/server/`** — servidor Node.js do piloto: webhook da Meta
+  (WhatsApp Cloud API), núcleo Claude 3.5 Sonnet (lê o `.md` + a Fonte Oficial),
+  módulo mock da agenda e Pix estático. Sobe sem as chaves e liga cada
+  integração conforme o `.env` é preenchido. Veja `brenda-rv/server/README.md`.
+
+Estado: núcleo do MVP e servidor implementados. Valores, sinal, reserva (2h) e
+SLA já consolidados na Fonte Oficial (v0.2). O **piloto conecta ao WhatsApp**
+quando as chaves da Meta/Anthropic/Pix forem preenchidas no `.env` e os itens
+`[ ]` restantes de `brenda-rv/FONTE-OFICIAL.md` forem fechados.
 
 ## Como usar
 

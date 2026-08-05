@@ -1,6 +1,6 @@
 # Fonte Oficial — Brenda RV
 
-**Versão:** 0.1 · **Última atualização:** 4 de agosto de 2026 · **Responsável:** Dra. Roselma Vilanova
+**Versão:** 0.2 · **Última atualização:** 5 de agosto de 2026 · **Responsável:** Dra. Roselma Vilanova
 
 > **Esta é a ÚNICA fonte de verdade da Brenda RV.** A Brenda só pode informar o que estiver aqui como **VIGENTE**. Tudo marcado como `PENDENTE` ela **não informa** — acolhe e transfere para Sabrina. Materiais históricos (scripts de 2025, "MárciaIA"/"Super Márcia", valores e endereços antigos) **não** alimentam a Brenda.
 >
@@ -12,7 +12,7 @@
 
 - **Marca:** RV — Engenharia da Face ("Estrutura antes da estética").
 - **Fundadora / decisão clínica:** Dra. Roselma Vilanova.
-- **Supervisão humana:** Sabrina (concierge humana, resolve exceções).
+- **Supervisão humana:** Sabrina (concierge humana, resolve exceções). Única responsável humana nesta fase.
 - **Fonte clínica oficial:** Feegow (prontuário e agenda assistencial). O CRM comercial **não** é prontuário.
 - **Brenda:** agente única e supervisionada. Sem subagentes no piloto.
 
@@ -22,95 +22,94 @@
 - **Endereço textual, complemento, estacionamento, unidade:** `PENDENTE` — usar apenas o link.
 - **Fuso horário oficial:** `America/Fortaleza` — VIGENTE.
 
-## 3. Avaliação presencial — PENDENTE
+## 3. Modalidades, valores e sinal — VIGENTE
 
-| Item | Estado | Valor |
-|---|---|---|
-| Valor da avaliação presencial | `PENDENTE` | R$ ___ |
-| Duração | `PENDENTE` | ___ minutos |
-| Local(is) autorizado(s) | `PENDENTE` | ___ |
+> Consolidado na Especificação Executável do MVP v1.0 (04/08/2026).
 
-## 4. Avaliação online / telemedicina — PENDENTE
+| Modalidade | Duração | Valor total | Sinal (30%) |
+|---|---:|---:|---:|
+| Avaliação presencial | 90 min | R$ 700 | R$ 210 |
+| Avaliação online | 60 min | R$ 600 | R$ 180 |
+| Horário VIP presencial | 90 min | R$ 700 | R$ 210 |
+| Horário VIP online | 60 min | R$ 600 | R$ 180 |
 
-| Item | Estado | Valor |
-|---|---|---|
-| Avaliação online permitida? | `PENDENTE` | sim / não |
-| Valor online | `PENDENTE` | R$ ___ |
-| Critérios de elegibilidade | `PENDENTE` | ___ |
-| Consentimento de telemedicina | `PENDENTE` | (texto a redigir/validar) |
+- **Sinal:** 30% do valor da avaliação, para reservar o horário.
+- **Horário VIP:** não é mais caro, desconto, urgência artificial nem categoria clínica. É uma disponibilidade diferenciada de agenda, oferecida **uma única vez** quando a pessoa tem interesse real mas ainda reflete, tem objeção esclarecível ou não achou opção comum adequada.
 
-## 5. Dias e horários autorizados — PENDENTE
+## 4. Agenda — VIGENTE (regras) / PENDENTE (calendário-fonte real)
 
-- Grade autorizada: `PENDENTE` — ___
-- Calendário-fonte oficial: `PENDENTE` (proposto: **RV | Avaliações**)
-- Calendários que bloqueiam disponibilidade: `PENDENTE` (proposto: Agenda-Mãe + cirurgias + compromissos bloqueantes + indisponibilidades pessoais marcadas como "ocupado")
+- **Blocos oficiais** (só se oferece bloco explicitamente autorizado; espaço vazio no calendário **não** é disponibilidade):
+  `RV DISPONÍVEL | Presencial` · `RV DISPONÍVEL | Online` · `RV VIP | Presencial` · `RV VIP | Online`.
+- Oferecer **até 2 opções reais**; reverificar conflito antes de reservar.
+- **Reserva temporária: 2 horas.** Reserva/confirmação gera **intervalo de 30 min depois** da avaliação. Pix expirado libera reserva e intervalo. Pagamento confirmado torna o bloqueio definitivo.
+- Avaliação **online:** após pagamento confirmado, criar evento com **Google Meet** e enviar o link na confirmação.
+- **Calendário-fonte real e credencial Google:** `PENDENTE` (no piloto, módulo mock em memória).
 
-## 6. Sinal, reserva, remarcação, cancelamento e reembolso — PENDENTE
+## 5. Política apresentada antes do Pix — VIGENTE (provisória, sujeita a validação jurídica)
 
-| Item | Estado | Valor |
-|---|---|---|
-| Sinal (integral / percentual / valor fixo) | `PENDENTE` | ___ |
-| Reserva temporária do horário | `PENDENTE` | ___ minutos (proposto: 30, +30 por Sabrina em conversa ativa) |
-| Remarcação sem custo até | `PENDENTE` | ___ horas antes |
-| Cancelamento e reembolso | `PENDENTE` | ___ (requer revisão jurídica/contábil) |
+Texto oficial provisório (registrar versão + data/hora + telefone + aceite):
 
-## 7. Pagamento (Pix) — PENDENTE
+> Para confirmar sua avaliação, será solicitado um sinal de 30% do valor. O horário fica reservado por até 2 horas, aguardando a confirmação do pagamento. É permitida uma remarcação sem custo com pelo menos 24 horas de antecedência; cancelando dentro desse prazo, o sinal é devolvido integralmente. Cancelamentos com menos de 24 horas e não comparecimento podem reter o sinal, pelo horário reservado. Saúde, força maior ou falha da própria RV são analisados individualmente. Tolerância de atraso: até 20 minutos. Reembolsos, retenções e exceções são sempre analisados pela equipe humana.
 
-- Provedor Pix escolhido: `PENDENTE` — **Efí Bank recomendado tecnicamente**, ainda não contratado/decidido.
-- Regra de segurança **VIGENTE**: pagamento só é confirmado por **retorno oficial do provedor** (webhook assinado ou consulta autenticada). **Print não confirma.**
+## 6. Pagamento (Pix) — PILOTO: chave estática / ALVO: BTG dinâmico (PENDENTE homologação)
+
+- **Piloto (decisão de 05/08/2026):** **Pix estático** (chave copia-e-cola). Como não há webhook bancário, **a confirmação do pagamento é humana (Sabrina)**.
+- **Alvo:** **BTG Pactual** com Pix dinâmico, `txid`, webhook assinado e devolução — `PENDENTE` de conta PJ habilitada e homologação.
+- Regra de segurança **VIGENTE**: **print não confirma pagamento**. No piloto, quem confirma é a Sabrina; com BTG, será o webhook assinado.
+
+## 7. Atendimento humano (Sabrina) e SLA — VIGENTE
+
+- **Expediente:** segunda a sexta, **8h–18h**.
+- **Meta operacional:** primeira visualização em até **30 minutos** no expediente.
+- **Prazo administrativo máximo desejável:** até **2 horas úteis**.
+- Fora do expediente: continuidade no próximo período útil.
+- Urgência/intercorrência: **alerta imediato (P0)**, sem prometer resposta médica instantânea.
+- **Canal oficial de alerta:** `PENDENTE` (proposto: WhatsApp direto da Sabrina + fila interna).
+- **Responsável técnico por integrações:** `PENDENTE`.
 
 ## 8. Convênios — PENDENTE
 
-- Atende convênio? Resposta autorizada: `PENDENTE`.
+- Atende convênio? Resposta autorizada: `PENDENTE` → acolher e transferir.
 
 ## 9. Procedimentos que a Brenda pode reconhecer — PENDENTE
 
-- Lista oficial: `PENDENTE`. Enquanto isso, a Brenda reconhece "interesse declarado" como texto livre, **sem** indicar, precificar ou opinar clinicamente.
+- Lista oficial: `PENDENTE`. A Brenda reconhece "interesse declarado" como texto livre, **sem** indicar, precificar cirurgia ou opinar clinicamente. Preço **cirúrgico** não é tabelado — depende de avaliação da Dra. Roselma.
 
 ## 10. Biblioteca de respostas aprovadas — PENDENTE
 
-- Perguntas frequentes com respostas oficiais: `PENDENTE` (construir com dados vigentes).
+- FAQ com respostas oficiais: `PENDENTE` (construir a partir desta Fonte).
 
-## 11. Atendimento humano (Sabrina) e SLA — PENDENTE
-
-| Item | Estado | Valor |
-|---|---|---|
-| Horário de atendimento da Sabrina | `PENDENTE` | ___ |
-| SLA humano no expediente | `PENDENTE` | ___ minutos |
-| Canal oficial de alerta para Sabrina | `PENDENTE` | ___ (proposto: WhatsApp direto + fila interna) |
-| Responsável técnico por integrações | `PENDENTE` | ___ |
-
-## 12. Privacidade e consentimento — PENDENTE
+## 11. Privacidade e consentimento — PENDENTE
 
 1. Aviso curto no WhatsApp (identidade + finalidade da Brenda): `PENDENTE`.
 2. Política de privacidade da RV: `PENDENTE`.
 3. Consentimento específico de telemedicina/imagens: `PENDENTE`.
 
-## 13. Cadências aprovadas — PENDENTE
+## 12. Cadências aprovadas — VIGENTE (comercial) / PENDENTE (textos finais)
 
-- Textos e gatilhos versionados: `PENDENTE`. Pós-consulta prevista em D+1/D+3/D+7/D+21; demais parciais. Nenhuma cadência é automatizada antes de aprovada aqui.
+- Pergunta sem resposta: retomada em 24h. Valor sem resposta: 24–48h. Horários sem escolha: 4h úteis ou manhã seguinte. Pix perto de expirar: 1 lembrete. Pix expirado: informar liberação. Confirmada: confirmação imediata + lembretes 48h/24h. Follow-up: nova tentativa em 3 dias; encerramento respeitoso em 7 dias.
+- **Máximo 2 tentativas** após a última resposta. Resposta, recusa, transferência humana ou mudança de estado incompatível **interrompem** a cadência.
+- **Textos versionados finais:** `PENDENTE`.
 
 ---
 
 ## Decisões que faltam para congelar o piloto
 
 ```markdown
-1.  Avaliação presencial: R$ ___
-2.  Duração: ___ minutos
-3.  Avaliação online: permitida / não permitida
-4.  Valor da avaliação online: R$ ___
-5.  Local(is) autorizado(s): ___
-6.  Dias e horários autorizados: ___
-7.  Sinal: integral / percentual / valor fixo
-8.  Remarcação sem custo até: ___ horas antes
-9.  Cancelamento e reembolso: ___
-10. Reserva temporária do horário: ___ minutos
-11. Horário de atendimento da Sabrina: ___
-12. SLA humano no expediente: ___ minutos
-13. Provedor Pix escolhido: ___
-14. Calendários que bloqueiam disponibilidade: ___
-15. Canal de alerta para Sabrina: ___
-16. Responsável técnico pelas integrações: ___
+1.  [OK] Avaliação presencial: R$ 700 (90 min) · sinal R$ 210
+2.  [OK] Avaliação online: R$ 600 (60 min) · sinal R$ 180
+3.  [OK] Reserva temporária: 2 horas
+4.  [OK] Remarcação sem custo: até 24h antes · tolerância 20 min
+5.  [OK] Expediente Sabrina: seg–sex 8h–18h · 1ª vista 30 min · máx 2h úteis
+6.  [ ] Local(is) presencial autorizado(s) e endereço textual
+7.  [ ] Calendário-fonte Google + credencial + blocos que bloqueiam
+8.  [ ] Provedor Pix definitivo (BTG) e homologação  — piloto usa chave estática
+9.  [ ] Canal oficial de alerta para Sabrina
+10. [ ] Responsável técnico pelas integrações
+11. [ ] Convênio: resposta autorizada
+12. [ ] Lista de procedimentos reconhecidos
+13. [ ] Textos de privacidade/consentimento (LGPD) + validação jurídica da política
+14. [ ] Textos finais das cadências
 ```
 
 ---
@@ -119,4 +118,5 @@
 
 | Data | Versão | Mudança | Responsável | Razão |
 |---|---|---|---|---|
-| 2026-08-04 | 0.1 | Criação da Fonte Oficial; itens vigentes: identidade/papéis, link de localização, fuso, regra de confirmação de pagamento. Demais marcados PENDENTE. | Dra. Roselma Vilanova | Separar fonte oficial vigente do material histórico antes do piloto. |
+| 2026-08-04 | 0.1 | Criação da Fonte Oficial; vigentes: identidade/papéis, link de localização, fuso, regra de confirmação de pagamento. Demais PENDENTE. | Dra. Roselma Vilanova | Separar fonte oficial vigente do material histórico antes do piloto. |
+| 2026-08-05 | 0.2 | Consolidados como VIGENTE (Especificação Executável v1.0): modalidades/valores/sinal, regras de agenda (2 opções, reserva 2h, buffer 30 min, Meet online), política provisória pré-Pix, expediente e SLA da Sabrina, cadências comerciais. Pix do piloto definido como **chave estática** (confirmação humana); BTG dinâmico como alvo pendente de homologação. | Dra. Roselma Vilanova | Habilitar a Brenda a informar valores e conduzir a jornada no piloto. |
