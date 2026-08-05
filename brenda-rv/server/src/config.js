@@ -63,9 +63,6 @@ export function readiness() {
     claude: Boolean(config.anthropic.apiKey),
     pix: Boolean(config.pix.key),
     sabrina_alert: Boolean(config.sabrina.whatsapp),
-    agenda_gcal: Boolean(
-      config.google.calendarId &&
-        (config.google.serviceAccountKeyFile || config.google.serviceAccountKey)
-    ),
+    agenda_gcal: Boolean(config.google.calendarId),
   };
 }

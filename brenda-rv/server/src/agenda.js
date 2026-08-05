@@ -11,10 +11,10 @@ import { config } from './config.js';
 import * as mock from './agenda.mock.js';
 
 function usarGcal() {
-  return Boolean(
-    config.google?.calendarId &&
-      (config.google?.serviceAccountKeyFile || config.google?.serviceAccountKey)
-  );
+  // Ativa GCal quando o ID da agenda estiver configurado.
+  // Credencial: chave inline (base64), arquivo explícito, GOOGLE_APPLICATION_CREDENTIALS
+  // ou ADC (gcloud auth application-default login) — o SDK Google resolve na ordem.
+  return Boolean(config.google?.calendarId);
 }
 
 async function backend() {

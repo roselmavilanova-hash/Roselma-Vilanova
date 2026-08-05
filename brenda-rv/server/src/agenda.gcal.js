@@ -51,20 +51,32 @@ let _auth = null;
 async function getAuth() {
   if (_auth) return _auth;
 
-  let keyJson;
-  if (config.google.serviceAccountKeyFile) {
-    const { readFileSync } = await import('node:fs');
-    keyJson = JSON.parse(readFileSync(config.google.serviceAccountKeyFile, 'utf8'));
-  } else if (config.google.serviceAccountKey) {
-    keyJson = JSON.parse(Buffer.from(config.google.serviceAccountKey, 'base64').toString('utf8'));
-  } else {
-    throw new Error('Credencial do Google não configurada (GOOGLE_SERVICE_ACCOUNT_KEY_FILE ou GOOGLE_SERVICE_ACCOUNT_KEY)');
+  const SCOPES = ['https://www.googleapis.com/auth/calendar'];
+
+  // Opção 1: JSON da conta de serviço em base64 (GOOGLE_SERVICE_ACCOUNT_KEY).
+  if (config.google.serviceAccountKey) {
+    const keyJson = JSON.parse(
+      Buffer.from(config.google.serviceAccountKey, 'base64').toString('utf8')
+    );
+    _auth = new google.auth.GoogleAuth({ credentials: keyJson, scopes: SCOPES });
+    return _auth;
   }
 
-  _auth = new google.auth.GoogleAuth({
-    credentials: keyJson,
-    scopes: ['https://www.googleapis.com/auth/calendar'],
-  });
+  // Opção 2: arquivo JSON da conta de serviço (GOOGLE_SERVICE_ACCOUNT_KEY_FILE
+  //           ou GOOGLE_APPLICATION_CREDENTIALS — padrão do SDK Google).
+  if (config.google.serviceAccountKeyFile) {
+    _auth = new google.auth.GoogleAuth({
+      keyFile: config.google.serviceAccountKeyFile,
+      scopes: SCOPES,
+    });
+    return _auth;
+  }
+
+  // Opção 3: Application Default Credentials (ADC).
+  //   • Local: gcloud auth application-default login
+  //   • VPS/Cloud Run: GOOGLE_APPLICATION_CREDENTIALS=/caminho/para/chave.json
+  //   • GCE/Cloud Run managed: metadata service automático
+  _auth = new google.auth.GoogleAuth({ scopes: SCOPES });
   return _auth;
 }
 
